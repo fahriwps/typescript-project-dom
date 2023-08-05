@@ -42,4 +42,4 @@ DOM elements are generated using TypeScript, enhancing user interaction and resp
 
 # Deployment 
 
-This project is deployed here: https://typescript-project-dom.vercel.app/
+This project is deployed here: https://comfy-melomakarona-4f2c3c.netlify.app
