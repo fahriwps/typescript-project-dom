@@ -3,12 +3,12 @@ import { ShowMessage } from "../interfaces/ListMessage";
 export class TransactionStatus {
   constructor(private container: HTMLUListElement){}
 
-  render(item: ShowMessage, heading: string){
+  render(item: ShowMessage, heading: string, statusPayment: string){
     const li:HTMLLIElement = document.createElement('li');
     const h4:HTMLHeadingElement = document.createElement('h4');
     const p:HTMLParagraphElement = document.createElement('p');
 
-    h4.innerText = `Transaction Successful: ${heading}`;
+    h4.innerText = `Transaction ${statusPayment} : ${heading}`;
     li.append(h4);
     p.innerText = item.message();
     li.append(p);

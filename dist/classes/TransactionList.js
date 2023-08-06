@@ -2,11 +2,11 @@ export class TransactionStatus {
     constructor(container) {
         this.container = container;
     }
-    render(item, heading) {
+    render(item, heading, statusPayment) {
         const li = document.createElement('li');
         const h4 = document.createElement('h4');
         const p = document.createElement('p');
-        h4.innerText = `Transaction Successful: ${heading}`;
+        h4.innerText = `Transaction ${statusPayment} : ${heading}`;
         li.append(h4);
         p.innerText = item.message();
         li.append(p);

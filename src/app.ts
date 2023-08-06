@@ -18,6 +18,12 @@ form.addEventListener('submit', (e: Event) => {
   let values: [string, string, number];
   let status: ShowMessage;
   values = [recipientName.value, detailsTransaction.value, amountTransaction.valueAsNumber];
-  status = new TransactionDetail(...values);
-  list.render(status, paymentType.value);
+
+  if (recipientName.value !== null && detailsTransaction.value !== null && amountTransaction.valueAsNumber !== null) {
+    status = new TransactionDetail(...values);
+    list.render(status, paymentType.value, `success`);
+  } else {
+    status = new TransactionDetail(...values);
+    list.render(status, paymentType.value, `failed`);
+  }
 });
