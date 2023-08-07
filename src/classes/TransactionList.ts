@@ -23,7 +23,7 @@ export class TransactionDetail implements ShowMessage {
     private amount: number,
   ){};
 
-  message() {
+  message(): string {
     return`Rp ${this.amount} sent to ${this.recipient} for ${this.details}`;
   }
 }

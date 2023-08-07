@@ -19,11 +19,17 @@ form.addEventListener('submit', (e: Event) => {
   let status: ShowMessage;
   values = [recipientName.value, detailsTransaction.value, amountTransaction.valueAsNumber];
 
-  if (recipientName.value !== undefined && detailsTransaction.value !== undefined && amountTransaction.valueAsNumber !== undefined) {
-    status = new TransactionDetail(...values);
-    list.render(status, paymentType.value, `success`);
-  } else {
-    status = new TransactionDetail(...values);
-    list.render(status, paymentType.value, `failed`);
+  if (amountTransaction.valueAsNumber >= 0) {
+    if (recipientName.value !== undefined && detailsTransaction.value !== undefined && amountTransaction.valueAsNumber !== undefined) {
+      status = new TransactionDetail(...values);
+      list.render(status, paymentType.value, `success`);
+    } else {
+      status = new TransactionDetail(...values);
+      list.render(status, paymentType.value, `failed`);
+    }
+  }
+  else {
+    // Display a warning to the user about the negative amount
+    alert('Amount cannot be negative.');
   }
 });
